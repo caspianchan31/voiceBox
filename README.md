@@ -29,11 +29,11 @@
 | 中文 | English |
 |---|---|
 | 🎙 **声音克隆** · 拖一段 5-15 秒人声,自动转录,生成新的克隆音色 | **Voice clone** from a 5-15 sec sample, auto-transcribed |
-| 📝 **长文朗读** · 上千字脚本自动分段,流式播放,12 分钟音频约 12 分钟出 | **Long-form synthesis** with auto-chunking and streaming playback |
+| 📝 **长文朗读** · 上千字脚本自动分段,流式播放,12 分钟音频约 12 分钟出 | **Long-form synthesis** with automatic segmentation and streaming playback |
 | 🎧 **多格式导出** · WAV / M4A / MP3,一键 ⌘S | **Export** to WAV / M4A / MP3 with ⌘S |
 | 📚 **声音库** · 多音色保存,跨次启动持续 | **Persistent voice library** across launches |
 | 🕘 **生成历史** · 自动归档每次合成,随时回听 / 重导出 | **Generation history** — every synthesis saved, replay & re-export |
-| 🛡 **完全本地** · 推理跑在 Metal/MLX 上,无网络请求 | **100% local** inference via Apple's MLX framework |
+| 🛡 **完全本地** · 推理在 Apple Silicon 本地完成,无网络请求 | **100% local**, on-device inference |
 
 ---
 
@@ -96,14 +96,13 @@
 
 ## 🧠 模型 · Under the Hood
 
-| 用途 | 模型 | 来源 |
+| 用途 | 引擎 | 来源 |
 |---|---|---|
-| TTS | `Qwen3-TTS-12Hz-1.7B-Base-bf16` | Alibaba Qwen |
-| ASR | `Qwen3-ASR-0.6B-4bit` | Alibaba Qwen |
-| 推理框架 | [MLX](https://github.com/ml-explore/mlx) | Apple |
-| Swift 封装 | [mlx-audio-swift](https://github.com/Blaizzy/mlx-audio-swift) | Blaizzy |
+| 语音合成 TTS | Qwen3 语音引擎 | Alibaba Qwen |
+| 语音识别 ASR | Qwen3 语音识别 | Alibaba Qwen |
+| 端侧加速 | Apple Silicon(GPU / 神经引擎) | Apple |
 
-首次启动会从 Hugging Face 拉模型(共 ~4 GB),建议接稳定网络;之后全部离线运行。
+首次启动会下载语音模型(共 ~4 GB),建议接稳定网络;之后全部离线运行。
 
 ---
 
@@ -119,14 +118,14 @@ The binary releases are free for personal use. The source code is **not** public
 <details>
 <summary><b>会不会上传我的声音或文本?</b></summary>
 
-不会。所有 TTS/ASR 计算都在你 Mac 上的 GPU/ANE 跑,完全离线。唯一的网络请求只在首次启动:从 Hugging Face 下载模型权重。下载完成后可以断网使用。
+不会。所有 TTS/ASR 计算都在你 Mac 上的 GPU/ANE 跑,完全离线。唯一的网络请求只在首次启动:下载语音模型。下载完成后可以断网使用。
 
 </details>
 
 <details>
 <summary><b>支持哪些语言?</b></summary>
 
-中文(普通话)和英文表现最好。Qwen3-TTS 官方还支持西语、法语、德语、日语、葡萄牙语、意大利语等十种语言。
+中文(普通话)和英文表现最好。Qwen3 语音引擎官方还支持西语、法语、德语、日语、葡萄牙语、意大利语等十种语言。
 
 </details>
 
@@ -140,7 +139,7 @@ App Store sandboxing breaks the local file system access we need for ref audio a
 <details>
 <summary><b>我可以商用吗?</b></summary>
 
-应用本身免费,但底层模型(Qwen3-TTS / Qwen3-ASR)的商用授权请遵循各自模型 license。voiceBox 不为模型输出承担合规责任。
+应用本身免费,但底层 Qwen3 模型的商用授权请遵循各自模型 license。voiceBox 不为模型输出承担合规责任。
 
 </details>
 
@@ -185,6 +184,6 @@ voiceBox 不存在,如果没有这些项目:
 
 <div align="center">
 
-Made with ☕ + MLX on Apple Silicon.
+Made with ☕ on Apple Silicon.
 
 </div>
