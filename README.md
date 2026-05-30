@@ -6,7 +6,9 @@
 
 **Clone any voice. Read anything. All on your Mac.**
 
-本地声音克隆 · 长文朗读 · 零云端 · Apple Silicon 原生
+Local voice cloning · long-form reading · zero cloud · native Apple Silicon
+
+**English** · [中文](README.zh-Hans.md) · [日本語](README.ja.md)
 
 [![Download](https://img.shields.io/github/v/release/caspianchan31/voiceBox?style=for-the-badge&logo=apple&label=Download&color=2563eb)](https://github.com/caspianchan31/voiceBox/releases/latest)
 [![Platform](https://img.shields.io/badge/macOS-15%2B-lightgrey?style=for-the-badge&logo=apple)](https://www.apple.com/macos/)
@@ -16,66 +18,44 @@
 
 ---
 
-## 一句话 · TL;DR
+## TL;DR
 
-> 用 5 秒参考音,本地克隆任意中英声音,把整篇长稿合成成自然的语音 —— 全程不上传一个字节。
->
 > Drop in 5 seconds of reference audio, clone any Mandarin or English voice locally, and read your entire script aloud — without sending a single byte to the cloud.
 
 ---
 
-## ✨ 它能做什么 · What it does
+## ✨ What it does
 
-| 中文 | English |
-|---|---|
-| 🎙 **声音克隆** · 拖一段 5-15 秒人声,自动转录,生成新的克隆音色 | **Voice clone** from a 5-15 sec sample, auto-transcribed |
-| 📝 **长文朗读** · 上千字脚本自动分段,流式播放,12 分钟音频约 12 分钟出 | **Long-form synthesis** with automatic segmentation and streaming playback |
-| 🎧 **多格式导出** · WAV / M4A / MP3,一键 ⌘S | **Export** to WAV / M4A / MP3 with ⌘S |
-| 📚 **声音库** · 多音色保存,跨次启动持续 | **Persistent voice library** across launches |
-| 🕘 **生成历史** · 自动归档每次合成,随时回听 / 重导出 | **Generation history** — every synthesis saved, replay & re-export |
-| 🛡 **完全本地** · 推理在 Apple Silicon 本地完成,无网络请求 | **100% local**, on-device inference |
+- 🎙 **Voice clone** from a 5–15 sec sample, auto-transcribed
+- 📝 **Long-form synthesis** with automatic segmentation and streaming playback
+- 🎧 **Export** to WAV / M4A / MP3 with ⌘S
+- 📚 **Persistent voice library** across launches
+- 🕘 **Generation history** — every synthesis saved, replay & re-export
+- 🛡 **100% local** — on-device inference, no network requests
 
 ---
 
-## 📦 下载 · Download
+## 📦 Download
 
-**[⬇️ 下载最新版 / Download Latest Release](https://github.com/caspianchan31/voiceBox/releases/latest)**
+**[⬇️ Download the latest release](https://github.com/caspianchan31/voiceBox/releases/latest)**
 
-或者直接打开 [Releases 页面](https://github.com/caspianchan31/voiceBox/releases) 选择历史版本。
+Or browse the [Releases page](https://github.com/caspianchan31/voiceBox/releases) for older versions.
 
 ---
 
-## 🚀 安装 · Install
-
-<details>
-<summary><b>中文步骤</b></summary>
-
-1. 下载 `voiceBox-X.Y.Z.dmg` 并双击挂载
-2. 把 `voiceBox.app` 拖入左侧的 `Applications` 文件夹
-3. **首次打开** · 在 `应用程序` 里**右键**(或 Control 点击)`voiceBox.app` → 选**打开** → 弹窗里再点**打开**
-4. 之后双击即可启动
-
-> 因为应用未付费购买 Apple 公证,首次需要绕过 Gatekeeper。这是 macOS 对非公证软件的统一处理,不是 voiceBox 的问题。
-> 如果出现"已损坏"提示,终端执行 `xattr -dr com.apple.quarantine /Applications/voiceBox.app`。
-
-</details>
-
-<details>
-<summary><b>English</b></summary>
+## 🚀 Install
 
 1. Download `voiceBox-X.Y.Z.dmg` and double-click to mount
-2. Drag `voiceBox.app` to your `Applications` folder
+2. Drag `voiceBox.app` into your `Applications` folder
 3. **First launch:** right-click (or Control-click) `voiceBox.app` in Applications → choose **Open** → click **Open** again in the dialog
 4. Subsequent launches: just double-click
 
-> The app isn't notarized (we'd rather not pay Apple's $99/yr). The right-click → Open dance is a one-time macOS quirk.
-> If you see "damaged" warning: `xattr -dr com.apple.quarantine /Applications/voiceBox.app`
-
-</details>
+> The app isn't notarized (we'd rather not pay Apple's $99/yr). The right-click → Open step is a one-time macOS quirk, not a problem with voiceBox.
+> If you see a "damaged" warning, run in Terminal: `xattr -dr com.apple.quarantine /Applications/voiceBox.app`
 
 ---
 
-## 🎬 工作流 · Workflow
+## 🎬 Workflow
 
 ```
    ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
@@ -86,23 +66,23 @@
        (one click ✨)         (paste / drop)         (⌘S export)
 ```
 
-**3 步上手 · 3 steps:**
+**3 steps:**
 
-1. **Studio** Tab → 点声音胶囊 → **添加声音** → 拖入参考音频 → 点 ✨ 自动转录 → 保存
-2. **Studio** 主输入框 → 粘贴脚本 (或拖 .txt) → 选音色
-3. ⌘↩ 生成 · 听完 · ⌘S 导出
+1. **Studio** tab → click the voice chip → **Add voice** → drop in reference audio → click ✨ to auto-transcribe → save
+2. **Studio** main input → paste your script (or drop a `.txt`) → pick a voice
+3. ⌘↩ to generate · listen · ⌘S to export
 
 ---
 
-## 🧠 模型 · Under the Hood
+## 🧠 Under the Hood
 
-| 用途 | 引擎 | 来源 |
+| Purpose | Engine | Source |
 |---|---|---|
-| 语音合成 TTS | Qwen3 语音引擎 | Alibaba Qwen |
-| 语音识别 ASR | Qwen3 语音识别 | Alibaba Qwen |
-| 端侧加速 | Apple Silicon(GPU / 神经引擎) | Apple |
+| Speech synthesis (TTS) | Qwen3 voice engine | Alibaba Qwen |
+| Speech recognition (ASR) | Qwen3 voice recognition | Alibaba Qwen |
+| On-device acceleration | Apple Silicon (GPU / Neural Engine) | Apple |
 
-首次启动会下载语音模型(共 ~4 GB),建议接稳定网络;之后全部离线运行。
+On first launch the voice models (~4 GB total) are downloaded — use a stable connection. After that, everything runs offline.
 
 ---
 
@@ -111,62 +91,62 @@
 <details>
 <summary><b>Is voiceBox open source?</b></summary>
 
-The binary releases are free for personal use. The source code is **not** publicly available. voiceBox stands on the shoulders of open-source models and the [mlx-audio-swift](https://github.com/Blaizzy/mlx-audio-swift) library — those are the open-source giants. This repo is the distribution channel.
+The binary releases are free for personal use. The source code is **not** publicly available. voiceBox stands on the shoulders of open-source models and frameworks (credited below) — those are the open-source giants. This repo is the distribution channel.
 
 </details>
 
 <details>
-<summary><b>会不会上传我的声音或文本?</b></summary>
+<summary><b>Will my voice or text be uploaded?</b></summary>
 
-不会。所有 TTS/ASR 计算都在你 Mac 上的 GPU/ANE 跑,完全离线。唯一的网络请求只在首次启动:下载语音模型。下载完成后可以断网使用。
+No. All speech computation runs locally on your Mac's GPU / Neural Engine, fully offline. The only network request is on first launch, to download the voice models. After that you can use it with no connection at all.
 
 </details>
 
 <details>
-<summary><b>支持哪些语言?</b></summary>
+<summary><b>Which languages are supported?</b></summary>
 
-中文(普通话)和英文表现最好。Qwen3 语音引擎官方还支持西语、法语、德语、日语、葡萄牙语、意大利语等十种语言。
+Mandarin Chinese and English work best. The Qwen3 voice engine also officially supports Spanish, French, German, Japanese, Portuguese, Italian and others — ten languages in total.
 
 </details>
 
 <details>
 <summary><b>Why isn't it on the Mac App Store?</b></summary>
 
-App Store sandboxing breaks the local file system access we need for ref audio and exports. Direct distribution gives a cleaner experience.
+App Store sandboxing breaks the local file-system access we need for reference audio and exports. Direct distribution gives a cleaner experience.
 
 </details>
 
 <details>
-<summary><b>我可以商用吗?</b></summary>
+<summary><b>Can I use it commercially?</b></summary>
 
-应用本身免费,但底层 Qwen3 模型的商用授权请遵循各自模型 license。voiceBox 不为模型输出承担合规责任。
+The app itself is free, but commercial licensing of the underlying Qwen3 models follows each model's own license. voiceBox takes no responsibility for compliance of the generated output.
 
 </details>
 
 ---
 
-## 📋 系统要求 · Requirements
+## 📋 Requirements
 
-- macOS 15+ (Sequoia 或更新)
+- macOS 15+ (Sequoia or newer)
 - Apple Silicon (M1 / M2 / M3 / M4)
-- 至少 5 GB 可用磁盘空间(模型权重)
-- 网络(仅首次下载模型)
+- At least 5 GB of free disk space (model weights)
+- Internet (first-time model download only)
 
 ---
 
 ## 🗺 Roadmap
 
-- [ ] 应用公证 + 自动更新 (Sparkle)
-- [ ] 多音色 batch generation
-- [ ] 字幕(SRT)同步导出
-- [ ] 自定义停顿 / 强调标记
-- [ ] iOS 版本
+- [ ] App notarization + auto-update (Sparkle)
+- [ ] Batch generation across voices
+- [ ] Synchronized subtitle (SRT) export
+- [ ] Custom pause / emphasis markers
+- [ ] iOS version
 
 ---
 
-## 🙏 致谢 · Acknowledgements
+## 🙏 Acknowledgements
 
-voiceBox 不存在,如果没有这些项目:
+voiceBox wouldn't exist without these projects:
 
 - [**MLX**](https://github.com/ml-explore/mlx) by Apple — the framework
 - [**mlx-audio-swift**](https://github.com/Blaizzy/mlx-audio-swift) by Prince Canuma — the Swift TTS/STT layer
@@ -176,9 +156,9 @@ voiceBox 不存在,如果没有这些项目:
 
 ---
 
-## 📮 反馈 · Feedback
+## 📮 Feedback
 
-发现 bug / 想加功能? 开个 [Issue](https://github.com/caspianchan31/voiceBox/issues)。
+Found a bug / want a feature? Open an [Issue](https://github.com/caspianchan31/voiceBox/issues).
 
 ---
 
