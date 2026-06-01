@@ -50,7 +50,7 @@
 3. **首次打开** · 在「应用程序」里**右键**(或 Control 点击)`voiceBox.app` → 选**打开** → 弹窗里再点**打开**
 4. 之后双击即可启动
 
-> 应用未付费购买 Apple 公证,首次需绕过 Gatekeeper —— 这是 macOS 对非公证软件的统一处理,不是 voiceBox 的问题。
+> 应用未做 Apple 公证,首次需绕过 Gatekeeper —— 这是 macOS 对非公证软件的统一处理,不是 voiceBox 的问题。
 > 如果出现「已损坏」提示,终端执行:`xattr -dr com.apple.quarantine /Applications/voiceBox.app`
 
 ---
@@ -91,7 +91,7 @@
 <details>
 <summary><b>voiceBox 开源吗?</b></summary>
 
-二进制版本可免费个人使用,源码**不公开**。voiceBox 站在开源模型和框架(见下方致谢)的肩膀上 —— 那些才是开源巨人。本仓库是分发渠道。
+二进制版本可免费个人使用,源码**不公开**。voiceBox 基于开源模型和框架构建,详见下方致谢。
 
 </details>
 
