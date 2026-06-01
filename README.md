@@ -50,7 +50,7 @@ Or browse the [Releases page](https://github.com/caspianchan31/voiceBox/releases
 3. **First launch:** right-click (or Control-click) `voiceBox.app` in Applications → choose **Open** → click **Open** again in the dialog
 4. Subsequent launches: just double-click
 
-> The app isn't notarized (we'd rather not pay Apple's $99/yr). The right-click → Open step is a one-time macOS quirk, not a problem with voiceBox.
+> The app isn't notarized, so the first launch needs the right-click → Open step — a one-time macOS step for non-notarized apps, not a problem with voiceBox.
 > If you see a "damaged" warning, run in Terminal: `xattr -dr com.apple.quarantine /Applications/voiceBox.app`
 
 ---
@@ -91,7 +91,7 @@ On first launch the voice models (~4 GB total) are downloaded — use a stable c
 <details>
 <summary><b>Is voiceBox open source?</b></summary>
 
-The binary releases are free for personal use. The source code is **not** publicly available. voiceBox stands on the shoulders of open-source models and frameworks (credited below) — those are the open-source giants. This repo is the distribution channel.
+The binary releases are free for personal use. The source code is **not** publicly available. voiceBox builds on open-source models and frameworks, credited below.
 
 </details>
 
